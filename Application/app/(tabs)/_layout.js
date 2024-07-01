@@ -3,7 +3,7 @@ import { Tabs } from 'expo-router';
 
 export default function TabLayout() {
     return (
-        <Tabs screenOptions={{ tabBarActiveTintColor: 'green' }}>
+        <Tabs screenOptions={{ tabBarActiveTintColor: 'green'}} >
             <Tabs.Screen
                 name="index"
                 options={{
@@ -15,6 +15,8 @@ export default function TabLayout() {
                 name="category_tab"
                 options={{
                     title: 'Category',
+                    headerTintColor:'green',
+                    headerTitleAlign: 'center',
                     tabBarIcon: ({ color }) => <Icon size={28} name="grid" color={color} />,
                 }}
             />
@@ -22,6 +24,8 @@ export default function TabLayout() {
                 name="cart_tab"
                 options={{
                     title: 'Cart',
+                    headerTintColor:'green',
+                    headerTitleAlign: 'center',
                     tabBarIcon: ({ color }) => <Icon size={28} name="cart" color={color} />,
                 }}
             />
@@ -29,6 +33,7 @@ export default function TabLayout() {
                 name="profile_tab"
                 options={{
                     title: 'Profile',
+                    headerShown: false,
                     tabBarIcon: ({ color }) => <Icon size={28} name="person" color={color} />,
                 }}
             />

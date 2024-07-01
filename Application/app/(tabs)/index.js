@@ -1,10 +1,12 @@
 import { View, StyleSheet } from 'react-native';
+import Home from '../screens/home';
 import Index from '../main';
 
 export default function Tab() {
     return (
         <View style={styles.container}>
-            <Index />
+            <Home />
+            {/* <Index /> */}
         </View>
     );
 }
@@ -14,5 +16,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: "8%"
     },
 });

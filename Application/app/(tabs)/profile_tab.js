@@ -3,9 +3,7 @@ import Profile from '../screens/profile';
 
 export default function Tab() {
     return (
-        <View style={styles.container}>
-            {/* <Index /> */}
-            {/* <Text>Profile</Text> */}
+        <View>
             <Profile />
         </View>
     );

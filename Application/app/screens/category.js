@@ -2,6 +2,39 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Stack } from 'expo-router'
 
+const Categories = [
+    {
+        title: 'Fruits',
+        img: require('../../assets/category_icon/fruits.png')
+
+    },
+    {
+        title: 'Vegetable',
+        img: require('../../assets/category_icon/vegetable.png')
+
+    },
+    {
+        title: 'Grains',
+        img: require('../../assets/category_icon/grains.png')
+
+    },
+    {
+        title: 'Dairy',
+        img: require('../../assets/category_icon/dairy.png')
+
+    },
+    {
+        title: 'Protein',
+        img: require('../../assets/category_icon/protein.png')
+
+    },
+    {
+        title: 'Juice',
+        img: require('../../assets/category_icon/juice.png')
+
+    }
+]
+
 const Category = () => {
     return (
         <View>
@@ -9,9 +42,8 @@ const Category = () => {
                 options={{
                     title: 'Categories',
                     statusBarColor: 'green',
-                    // navigationBarColor: 'green',
-                    headerTintColor:'green'
-                    // headerShown: false
+                    headerTintColor:'green',
+                    headerTitleAlign: 'center',
                 }}
             />
             <Text>Category Screen</Text>

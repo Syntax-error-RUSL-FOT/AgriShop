@@ -8,6 +8,7 @@ import Singup from './screens/signup';
 import Home from './screens/home';
 import Imageslideshow from './screens/imageslideshow';
 import TabLayout from './(tabs)/_layout';
+import Onboardingscreens from './screens/onboardingscreens';
 
 
 export default function Index() {
@@ -15,6 +16,7 @@ export default function Index() {
         <View>
             <Stack.Screen
                 options={{
+                    statusBarColor: 'green',
                     headerShown: false,
                 }}
             />
@@ -23,9 +25,10 @@ export default function Index() {
             {/* <Welcome3 /> */}
             {/* <Login /> */}
             {/* <Singup /> */}
-            <Home />
+            {/* <Home /> */}
             {/* <TabLayout /> */}
             {/* <Imageslideshow /> */}
+            {/* <Onboardingscreens /> */}
         </View>
     );
 }

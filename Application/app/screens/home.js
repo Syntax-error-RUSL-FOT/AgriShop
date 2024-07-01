@@ -1,7 +1,7 @@
 import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Imageslideshow from './imageslideshow'
-import { Stack } from 'expo-router'
+import { Link, Stack } from 'expo-router'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Items from './items';
 import Categorybar from './categorybar';
@@ -18,10 +18,21 @@ const Home = () => {
             <ScrollView showsHorizontalScrollIndicator={false} >
                 {/* Header Section */}
                 <View style={styles.header_title}>
+                    <Image source={require('../../assets/icon.png')} style={styles.header_img} />
                     <Text style={styles.greething}>Hello 👋 {'\n'}Healthy and happy day! </Text>
-                    <View>
-                        <Image source={require('../../assets/icon.png')} style={styles.header_img} />
-                    </View>
+                    <TouchableOpacity>
+                        <Link href={{ pathname: './screens/login' }}>
+                            <View style={{
+                                backgroundColor: '#30c730',
+                                borderRadius: 8,
+                                padding: 10,
+                                width: wp(18),
+                                height: hp(5)
+                            }}>
+                                <Text style={{ fontSize: 20, fontWeight: '600', textAlign: 'center', color: 'white' }}>Login</Text>
+                            </View>
+                        </Link>
+                    </TouchableOpacity>
                 </View>
 
                 <View>
