@@ -2,8 +2,13 @@ import { ImageBackground, KeyboardAvoidingView, Platform, SafeAreaView, StyleShe
 import React from 'react'
 import { Link, Stack } from 'expo-router'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
+  const navigation = useNavigation();
+  const login = () => {
+    navigation.navigate('index');
+  };
   return (
     <View>
       <SafeAreaView style={{ flex: 2 }}>
@@ -34,26 +39,44 @@ const Login = () => {
                 <TextInput placeholder='Password' style={styles.input} secureTextEntry />
               </View>
               <View>
-                <Link href={{ pathname: './screens/forgot_psw' }} style={{
-                    fontSize: 18,
-                    textAlign: 'center',
-                    marginVertical: hp(2),
-                    color: 'green',
-                    fontWeight: '600'}}>
+                <Link href={{ pathname: '../screens/forgot_psw' }} style={{
+                  fontSize: 18,
+                  textAlign: 'center',
+                  marginVertical: hp(2),
+                  color: 'green',
+                  fontWeight: '600'
+                }}>
                   <Text>Forgot Password? </Text>
                 </Link>
+                <View style={{
+                  flexDirection: 'row',
+                  paddingHorizontal: wp(15)
+                }}>
+                  <Text style={{
+                    fontSize: 18,
+                    textAlign: 'center'
+                  }}>Didn't have an account?  </Text>
+                  <Link href={{ pathname: '../screens/signup' }} style={{
+                    textAlign: 'center',
+                    fontSize: 18,
+                    color: 'green',
+                    fontWeight: '600'
+                  }}>
+                    <Text>Create an account</Text>
+                  </Link>
+                </View>
                 <View>
-                  <TouchableOpacity>
-                    <Link href={{ pathname: './screens/home' }} style={styles.btn_signup}>
-                      <View>
-                        <Text style={{
-                          color: 'white',
-                          fontSize: 24,
-                          fontWeight: '600',
-                          marginHorizontal: wp(25)
-                        }}>Create An Account</Text>
-                      </View>
-                    </Link>
+                  <TouchableOpacity style={styles.btn_signup} onPress={login}>
+                    <View>
+                      <Text style={{
+                        color: 'white',
+                        fontSize: 24,
+                        fontWeight: '600',
+                        // marginHorizontal: wp(30),
+                        textAlign:'center',
+                        marginTop: hp(2)
+                      }}>Login</Text>
+                    </View>
                   </TouchableOpacity>
                 </View>
               </View>

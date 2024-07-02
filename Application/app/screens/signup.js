@@ -2,8 +2,13 @@ import { ImageBackground, KeyboardAvoidingView, Platform, SafeAreaView, StyleShe
 import React from 'react'
 import { Link, Stack } from 'expo-router'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/native';
 
 const Signup = () => {
+    const navigation = useNavigation();
+    const signup = () => {
+        navigation.navigate('index');
+    };
     return (
         <View>
             <SafeAreaView style={{ flex: 2 }}>
@@ -63,18 +68,18 @@ const Signup = () => {
                                         color: 'green'
                                     }}>condition</Text>
                                 </View>
-                                <View>
-                                    <TouchableOpacity>
-                                        <Link href={{ pathname: './screens/home' }} style={styles.btn_singup}>
-                                            <View>
-                                                <Text style={{
-                                                    color: 'white',
-                                                    fontSize: 24,
-                                                    fontWeight: '600',
-                                                    marginHorizontal: wp(25)
-                                                }}>Create An Account</Text>
-                                            </View>
-                                        </Link>
+                                <View style={styles.btn_singup}>
+                                    <TouchableOpacity onPress={signup}>
+                                        <View>
+                                            <Text style={{
+                                                color: 'white',
+                                                fontSize: 24,
+                                                fontWeight: '600',
+                                                // marginHorizontal: wp(25)
+                                                textAlign: 'center',
+                                                marginTop: hp(2)
+                                            }}>Create An Account</Text>
+                                        </View>
                                     </TouchableOpacity>
                                 </View>
                             </View>

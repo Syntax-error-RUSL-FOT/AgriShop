@@ -4,9 +4,10 @@ import Index from '../main';
 
 export default function Tab() {
     return (
-        <View style={styles.container}>
+        <View>
             <Home />
             {/* <Index /> */}
+            {/* <Test /> */}
         </View>
     );
 }
