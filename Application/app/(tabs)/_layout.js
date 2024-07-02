@@ -14,7 +14,7 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="category_tab"
                 options={{
-                    title: 'Category',
+                    title: 'All',
                     headerTintColor:'green',
                     headerTitleAlign: 'center',
                     tabBarIcon: ({ color }) => <Icon size={28} name="grid" color={color} />,

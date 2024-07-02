@@ -1,6 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 import Home from '../screens/home';
 import Index from '../main';
+import Test from '../screens/Test';
 
 export default function Tab() {
     return (

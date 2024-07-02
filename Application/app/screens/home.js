@@ -1,10 +1,11 @@
-import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native'
 import React from 'react'
 import Imageslideshow from './imageslideshow'
 import { Link, Stack } from 'expo-router'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Items from './items';
 import Categorybar from './categorybar';
+
 
 const Home = () => {
     return (
@@ -34,7 +35,6 @@ const Home = () => {
                         </Link>
                     </TouchableOpacity>
                 </View>
-
                 <View>
                     <Imageslideshow />
                 </View>

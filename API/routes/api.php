@@ -15,20 +15,29 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/user/ResetPassword',[AuthController::class,'reset_password']);
 
 Route::get('/teat', function () {
-    return response()->json(['message'=>'Hellow Client, I`m API']);
+    return response()->json(['message' => 'Hellow Client, I`m API']);
 });
 
-Route::post('/user/register',[AuthController::class,'register']);
-Route::post('/user/login',[AuthController::class,'login']);
+Route::post('/user/register', [AuthController::class, 'register']);
+Route::post('/user/login', [AuthController::class, 'login']);
 
-Route::group(['middleware'=> ['auth:sanctum']], function () {
-    Route::post('/user/logout',[AuthController::class,'logout']);
-    Route::post('/user/delete',[AuthController::class,'delete']);
-    Route::post('/user/update',[AuthController::class,'update']);
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('/user/logout', [AuthController::class, 'logout']);
+    Route::post('/user/delete', [AuthController::class, 'delete']);
+    Route::post('/user/update', [AuthController::class, 'update']);
 
-    Route::apiResource('/product',ProductController::class);
-    Route::apiResource('/cart',CartController::class);
-    Route::apiResource('/payment',PaymentController::class)->only(['index','show']);
+    Route::apiResource('/product', ProductController::class);
+    Route::apiResource('/cart', CartController::class);
+    Route::apiResource('/payment', PaymentController::class)->only(['index', 'show']);
 
-    Route::post('/make-payment',MakePaymentController::class);
+    Route::post('/make-payment', MakePaymentController::class);
 });
+Route::post('/user/logout', [AuthController::class, 'logout']);
+Route::post('/user/delete', [AuthController::class, 'delete']);
+Route::post('/user/update', [AuthController::class, 'update']);
+
+Route::apiResource('/product', ProductController::class);
+Route::apiResource('/cart', CartController::class);
+Route::apiResource('/payment', PaymentController::class)->only(['index', 'show']);
+
+Route::post('/make-payment', MakePaymentController::class);
